@@ -23,5 +23,30 @@ namespace DynamicStruct
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+        }
+
+        public string NameMonitor
+        {
+            get { return nameMonitor.Text; }
+        }
+
+        public float DiagMonitor
+        {
+            get { return float.Parse(diagMonitor.Text); }
+        }
+
+        public decimal PriceMonitor
+        {
+            get { return decimal.Parse(priceMonitor.Text); }
+        }
     }
 }

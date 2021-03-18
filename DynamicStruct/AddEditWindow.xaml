@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DynamicStruct"
         mc:Ignorable="d"
-        Title="Добавить монитор" Height="450" Width="800">
+        Title="Добавить монитор" Height="250" Width="430">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="nameMonitor" Margin="10" Grid.Row="0"/>
+        <TextBox x:Name="diagMonitor" Margin="10" Grid.Row="1"/>
+        <TextBox x:Name="priceMonitor" Margin="10" Grid.Row="2"/>
+        <StackPanel Orientation="Horizontal"  Grid.Row="3" HorizontalAlignment="Center">
+            <Button Content="Ok" Margin="10" Width="150" Click="Button_Click"/>
+            <Button Content="Cancel" Margin="10" Width="150" Click="Button_Click_1"/>
+        </StackPanel>
     </Grid>
 </Window>
