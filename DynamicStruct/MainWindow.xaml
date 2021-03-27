@@ -18,13 +18,7 @@
         </Grid.RowDefinitions>
         <ListView x:Name="StackPanel" Grid.Row="0" Grid.Column="1"
                  Margin="10" Background="Yellow">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="130" Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
-                    <GridViewColumn Width="130" Header="Diagonal" DisplayMemberBinding="{Binding Path=Diagonal}" />
-                    <GridViewColumn Width="130" Header="Price" DisplayMemberBinding="{Binding Path=Price}" />
-                </GridView>
-            </ListView.View>
+            
         </ListView>
         <StackPanel Grid.Row="1" Grid.Column="1"
                     Orientation="Horizontal" HorizontalAlignment="Center">

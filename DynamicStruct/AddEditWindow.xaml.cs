@@ -38,15 +38,5 @@ namespace DynamicStruct
         {
             get { return nameMonitor.Text; }
         }
-
-        public float DiagMonitor
-        {
-            get { return float.Parse(diagMonitor.Text); }
-        }
-
-        public decimal PriceMonitor
-        {
-            get { return decimal.Parse(priceMonitor.Text); }
-        }
     }
 }

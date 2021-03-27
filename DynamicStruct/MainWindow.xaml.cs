@@ -20,11 +20,11 @@ namespace DynamicStruct
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Stack<Monitor> monitors;
+        Queue<string> list;
         public MainWindow()
         {
             InitializeComponent();
-            monitors = new Stack<Monitor>();
+            list = new Queue<string>();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,25 +32,28 @@ namespace DynamicStruct
             AddEditWindow add = new AddEditWindow();
             if(add.ShowDialog()==true)
             {
-                string name = add.NameMonitor;
-                float diag = add.DiagMonitor;
-                decimal pr = add.PriceMonitor;
-                Monitor monitor = new Monitor(name,diag,pr);
-                monitors.Push(monitor);
+                string str = add.NameMonitor;
+                list.Enqueue(str);
+                StackPanel.Items.Add(str);
                 UpdateStack();
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            monitors.Pop();
+            list.Dequeue();
+
             UpdateStack();
         }
         private void UpdateStack()
         {
-            StackPanel.ItemsSource = null;
+           //StackPanel.ItemsSource = null;
             StackPanel.Items.Clear();
-            StackPanel.ItemsSource = monitors;
+            // StackPanel.ItemsSource = list;
+            foreach (var item in list)
+            {
+                StackPanel.Items.Add(item);
+            }
         }
     }
 }
